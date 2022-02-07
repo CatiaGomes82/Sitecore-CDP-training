@@ -10,13 +10,12 @@ body {
   box-sizing: border-box;
 }
 
-main {
-  padding: 5rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
 }
 
 code {
@@ -26,10 +25,17 @@ code {
   font-family: Menlo, Monaco, Lucida Console, Courier New, monospace;
 }
 
-.container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.component {
+  padding: 40px 0; 
+  width: 100%;
+}
+
+.component:nth-child(odd) {
+  background: lightgray;
 }
