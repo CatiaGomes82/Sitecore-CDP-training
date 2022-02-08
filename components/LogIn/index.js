@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import settings from "../../settings";
 
 const LogIn = () => {

@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Login from '@components/Login';
+import Login from '../components/LogIn';
 
 const Home = () => {
   return (
