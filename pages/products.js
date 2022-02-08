@@ -90,7 +90,6 @@ const Products = () => {
     <>
       <Head>
         <title>Healthy Living Shop</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
         <h1>Products</h1>
