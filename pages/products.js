@@ -20,6 +20,7 @@ const Products = () => {
   };
 
   const addToCart = () => {
+    var date = new Date;
     // IDENTITY EVENT
     _boxeverq.push(function () {
       var event = {
@@ -34,8 +35,12 @@ const Products = () => {
           "type": "BAR",
           "item_id": "BAR_1",
           "name": "Chocolate Peanut Bar",
+          "orderedAt": date.toISOString(),
           "currency": "EUR",
-          "price": 2
+          "quantity": 1,
+          "price": 2.00,
+          "productId": "BAR_1",
+          "referenceId": "BAR_1"
         }
       };
 
@@ -46,6 +51,7 @@ const Products = () => {
   };
 
   const confirmOrder = () => {
+    var date = new Date;
     var event = {
       "channel": "WEB",
       "type": "CONFIRM",
@@ -58,8 +64,12 @@ const Products = () => {
         "type": "BAR",
         "item_id": "BAR_1",
         "name": "Chocolate Peanut Bar",
+        "orderedAt": date.toISOString(),
         "currency": "EUR",
-        "price": 2
+        "quantity": 1,
+        "price": 2.00,
+        "productId": "BAR_1",
+        "referenceId": "BAR_1"
       }
     };
 
