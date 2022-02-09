@@ -32,6 +32,8 @@ const CdpSnippet = () => {
       return;
     }
 
+    console.log(Boxever.pointOfSale)
+
     // VIEW EVENT
     _boxeverq.push(function () {
       var event = {
@@ -44,26 +46,35 @@ const CdpSnippet = () => {
         "pos": Boxever.pointOfSale,
       };
 
+     // console.log(Boxever.pointOfSale)
+
       Boxever.eventCreate(event, (data) => {
         console.log(`Event ${event.type} pushed: ${data.status}`);
       }, 'json');
     });
 
     var callFlowsContext = {
-      context: {
         "channel": "WEB",   // update before using. e.g. “WEB”
         "language": "EN",   // update before using. e.g. “en”
         "currencyCode": "EUR",  // update before using. e.g. “EUR”
-        "pointOfSale": Boxever.pointOfSale, // or value from your data layer
+        "pointOfSale": window._boxever_settings.pointOfSale, // or value from your data layer
         "browserId": Boxever.getID(),
         "clientKey": Boxever.client_key,   
         "friendlyId": "catia_experience"
-      }
     };
+
+    console.log(Boxever.getID())
+    console.log(Boxever.client_key)
+    console.log(window.Boxever.pointOfSale)
+
+    console.log(window._boxever_settings.client_key)
+    console.log(window._boxever_settings.pointOfSale)
+
+    // 
     
-    Boxever.callFlows(callFlowsContext, function(response) {
-      console.log(response);
-    }, 'json');
+     Boxever.callFlows(callFlowsContext, function(response) {
+       console.log(response);
+     });
 
   }, [isLoaded])
 

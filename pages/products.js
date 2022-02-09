@@ -60,17 +60,11 @@ const Products = () => {
       "page": "Home",
       "pos": settings.POS,
       "browser_id": Boxever.getID(),
-      "product": {
-        "type": "BAR",
-        "item_id": "BAR_1",
-        "name": "Chocolate Peanut Bar",
-        "orderedAt": date.toISOString(),
-        "currency": "EUR",
-        "quantity": 1,
-        "price": 2.00,
-        "productId": "BAR_1",
-        "referenceId": "BAR_1"
-      }
+      "product": [
+        {
+          "item_id": "BAR_1"
+        }
+      ]
     };
 
     Boxever.eventCreate(event, (data) => {
