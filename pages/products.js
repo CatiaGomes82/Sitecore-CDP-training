@@ -16,7 +16,7 @@ const Products = () => {
       }
     };
 
-    Boxever.callFlows(callFlowsContext, function (response) {
+    Boxever.callFlows(callFlowsContext, (response) => {
       console.log(response);
     });
   };
