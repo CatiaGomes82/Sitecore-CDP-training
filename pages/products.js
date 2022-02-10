@@ -2,6 +2,25 @@ import Head from 'next/head';
 import settings from '../settings';
 
 const Products = () => {
+  const adjustPropensity = (e) => {
+    var callFlowsContext = {
+      "channel": "WEB",   // update before using. e.g. “WEB”
+      "language": "EN",   // update before using. e.g. “en”
+      "currencyCode": "EUR",  // update before using. e.g. “EUR”
+      "pointOfSale": window._boxever_settings.pointOfSale, // or value from your data layer
+      "browserId": Boxever.getID(),
+      "clientKey": Boxever.client_key,
+      "friendlyId": "catia_experience",
+      "params": {
+        "customPropensity": e.target.dataset.id
+      }
+    };
+
+    Boxever.callFlows(callFlowsContext, function (response) {
+      console.log(response);
+    });
+  };
+
   const forceClose = () => {
     // IDENTITY EVENT
     _boxeverq.push(function () {
@@ -51,7 +70,6 @@ const Products = () => {
   };
 
   const confirmOrder = () => {
-    var date = new Date;
     var event = {
       "channel": "WEB",
       "type": "CONFIRM",
@@ -98,6 +116,9 @@ const Products = () => {
       <div>
         <h1>Products</h1>
         <button onClick={forceClose}>Force close</button>
+        <button onClick={adjustPropensity} data-id="0">AdjustPropensity: 0</button>
+        <button onClick={adjustPropensity} data-id="0.5">AdjustPropensity: 0.5</button>
+        <button onClick={adjustPropensity} data-id="1">AdjustPropensity: 1</button>
         <ul>
           <li className='component'>
             <div className='wrapper'>

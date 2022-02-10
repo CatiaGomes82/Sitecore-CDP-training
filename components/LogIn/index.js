@@ -1,10 +1,11 @@
+import { useEffect } from "react";
 import settings from "../../settings";
 
 const LogIn = () => {
   const handleSubmit = (e) => {
     var email = e.target.email.value;
     e.preventDefault();
-    
+
     // IDENTITY EVENT
     _boxeverq.push(function () {
       var event = {
@@ -20,7 +21,7 @@ const LogIn = () => {
 
       Boxever.eventCreate(event, (data) => {
         console.log(`Event ${event.type} pushed: ${data.status}`);
-       }, 'json');
+      }, 'json');
     });
   }
 

@@ -54,27 +54,18 @@ const CdpSnippet = () => {
     });
 
     var callFlowsContext = {
-        "channel": "WEB",   // update before using. e.g. “WEB”
-        "language": "EN",   // update before using. e.g. “en”
-        "currencyCode": "EUR",  // update before using. e.g. “EUR”
-        "pointOfSale": window._boxever_settings.pointOfSale, // or value from your data layer
-        "browserId": Boxever.getID(),
-        "clientKey": Boxever.client_key,   
-        "friendlyId": "catia_experience"
+      "channel": "WEB",   // update before using. e.g. “WEB”
+      "language": "EN",   // update before using. e.g. “en”
+      "currencyCode": "EUR",  // update before using. e.g. “EUR”
+      "pointOfSale": window._boxever_settings.pointOfSale, // or value from your data layer
+      "browserId": Boxever.getID(),
+      "clientKey": Boxever.client_key,
+      "friendlyId": "catia_experience"
     };
 
-    console.log(Boxever.getID())
-    console.log(Boxever.client_key)
-    console.log(window.Boxever.pointOfSale)
-
-    console.log(window._boxever_settings.client_key)
-    console.log(window._boxever_settings.pointOfSale)
-
-    // 
-    
-     Boxever.callFlows(callFlowsContext, function(response) {
-       console.log(response);
-     });
+    Boxever.callFlows(callFlowsContext, function (response) {
+      console.log(response);
+    });
 
   }, [isLoaded])
 
