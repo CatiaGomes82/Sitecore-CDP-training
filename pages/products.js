@@ -18,6 +18,7 @@ const Products = () => {
 
     Boxever.callFlows(callFlowsContext, (response) => {
       console.log(response);
+      //TODO PUSH ALERT
     });
   };
 

@@ -32,8 +32,6 @@ const CdpSnippet = () => {
       return;
     }
 
-    console.log(Boxever.pointOfSale)
-
     // VIEW EVENT
     _boxeverq.push(function () {
       var event = {
